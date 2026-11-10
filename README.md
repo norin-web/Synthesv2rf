@@ -8,7 +8,7 @@ Built on the Hisense promo scaffold: React 18 + TypeScript + Vite 6 + Tailwind 4
 
 ```bash
 pnpm install
-pnpm dev        # http://localhost:5173/Synthesv2rf/
+pnpm dev        # http://localhost:5173/
 pnpm build      # → dist/
 ```
 
@@ -18,17 +18,14 @@ Push to `main` → GitHub Actions (`.github/workflows/deploy.yml`) builds with p
 `index.html` to `404.html` (so deep links load the app) and publishes to GitHub Pages.
 In the repo: **Settings → Pages → Source: GitHub Actions** must be on before the first run.
 
-Live URL without a domain: https://norin-web.github.io/Synthesv2rf/
+Live URL: https://synthesia.casa (custom domain, `public/CNAME`).
 
 ### The `base` trap
 
-`vite.config.ts` has `base: "/Synthesv2rf/"` because the site is served from a subpath.
-When a custom domain is attached in Pages settings, in the **same commit**:
-
-1. set `base: "/"`;
-2. add `public/CNAME` with the bare domain;
-3. update `site.url` in `src/app/content/site.ts` and the `og:url` / `og:image` tags in `index.html`.
-
+The custom domain synthesia.casa is attached, so `vite.config.ts` has `base: "/"` and
+`public/CNAME` holds the domain (without it Pages drops the domain on the next deploy).
+If the domain is ever removed, in the **same commit**: set `base: "/Synthesv2rf/"`, delete
+`public/CNAME`, and point `site.url` and the `og:` tags back to norin-web.github.io/Synthesv2rf/.
 Otherwise every asset 404s and the page goes blank.
 
 ## Where things live

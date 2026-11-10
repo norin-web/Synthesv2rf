@@ -9,7 +9,7 @@ export const site = {
   // PLACEHOLDER — company name from the owner’s Privacy Policy / Terms of Use
   operator: "OPERATOR",
   tagline: "AI avatar videos from a script, made on your iPhone.",
-  url: "https://norin-web.github.io/Synthesv2rf/",
+  url: "https://synthesia.casa/",
 };
 
 export const app = {
