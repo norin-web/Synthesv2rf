@@ -1,27 +1,28 @@
 // Every brand / app fact lives here so names, IDs and emails are never duplicated.
-// PLACEHOLDER values are marked — replace them when the owner sends real data
-// (operator and dates come from the Privacy Policy / Terms of Use).
+// Facts follow the owner's Privacy Policy and Terms of Use (received 2026-11-11).
 
 export const site = {
-  brand: "Synth AI Avatar",
+  // Brand as in the owner's documents; used with the rights holder's authorization (Terms §1, §7)
+  brand: "Synthesia",
   email: "dominikceo@kistner.click",
   year: new Date().getFullYear(),
-  // PLACEHOLDER — company name from the owner’s Privacy Policy / Terms of Use
-  operator: "OPERATOR",
+  operator: "Dominik Kistner",
+  address: "Stallschreiberstraße 17, 10179 Berlin, Germany",
+  city: "Berlin",
   tagline: "AI avatar videos from a script, made on your iPhone.",
+  // wording follows Terms of Use §1
+  disclaimer: "The Synthesia name and related branding are used pursuant to authorization from the rights holder. The App is operated by Dominik Kistner.",
   url: "https://synthesia.casa/",
 };
 
 export const app = {
   id: "6827178858",
   url: "https://apps.apple.com/app/id6827178858",
-  // App isn’t live yet (iTunes lookup returns 0 results, 2026-11-10).
-  // Refresh from https://itunes.apple.com/lookup?id=6827178858&country=us after release.
-  minIOS: "PLACEHOLDER",
-  category: "PLACEHOLDER",
-  languages: "PLACEHOLDER",
-  size: "PLACEHOLDER",
-  price: "Free, offers in-app purchases",
+  // The App Store listing isn't live yet (lookup returns 0 results, 2026-11-11), so only
+  // facts from the owner's documents are shown. After release, add iOS version, category,
+  // languages and size from https://itunes.apple.com/lookup?id=6827178858&country=us
+  age: "16+",
+  price: "Auto-renewable subscriptions via the App Store",
 };
 
 export const nav = [
@@ -50,7 +51,7 @@ export const strip = ["Templates", "Create Avatar", "Write your script", "Select
 
 export const gains = [
   { tag: "Avatar", n: "2 ways", text: "to get an avatar: pick one from Templates or upload a photo from Photos or Camera." },
-  { tag: "History", n: "Kept", text: "Name your avatar once and it stays in your templates. Finished videos wait in History." },
+  { tag: "History", n: "Kept", text: "Name your avatar once and it stays in your templates. Finished videos wait in History, on your iPhone." },
 ];
 
 export const modes = [
@@ -80,7 +81,7 @@ export const demo = {
 };
 
 export const steps = [
-  { icon: "app", title: "Get the app", text: "Download Synth AI Avatar from the App Store on your iPhone." },
+  { icon: "app", title: "Get the app", text: "Download Synthesia from the App Store on your iPhone." },
   { icon: "face", title: "Choose a face", text: "Tap a template or Create Avatar and upload your photo." },
   { icon: "pen", title: "Write and generate", text: "Add the script, pick a voice and let the video render." },
 ];
@@ -124,28 +125,30 @@ export const tabs = {
 export const storeShots = ["/images/aso-2.webp", "/images/aso-3.webp", "/images/aso-4.webp", "/images/aso-5.webp"];
 
 export const specs: [string, string][] = [
-  ["Developer", site.operator],
-  ["Category", app.category],
-  ["Compatibility", `iPhone, iOS ${app.minIOS} or later`],
-  ["Languages", app.languages],
-  ["Size", app.size],
+  ["Developer", `${site.operator}, ${site.city}`],
+  ["Compatibility", "iPhone"],
+  ["Age", app.age],
+  ["Account", "Not required"],
+  ["Internet", "Needed to generate videos"],
   ["Price", app.price],
 ];
 
 export const principles = [
   { title: "Three screens, not thirty", text: "Avatar, script, voice. If a step does not change the video, it is not in the app." },
-  { title: "Access only when you ask", text: "Camera and Photos are requested only when you choose to upload your own image." },
+  { title: "Access only when you ask", text: "The camera is used only when you take a photo for an avatar, and Photos only to save a finished video." },
   { title: "Your work stays at hand", text: "Named avatars return to your templates and every video waits in History." },
 ];
 
 /** Support: picking a question plays its answer as subtitles over the avatar. */
 export const faq = [
   { chip: "How do I make my first video?", short: "My first video", q: "How do I make my first video?", a: "Open the Generate tab, tap a template or Create Avatar, write your script in the field below and tap the arrow. Choose a voice and language, and the app starts generating." },
-  { chip: "Can I use my own photo?", short: "Use my own photo", q: "Can I use my own photo as the avatar?", a: "Yes. Switch to Create Avatar, tap Select Image and pick a photo from Photos or take one with the camera. Give the avatar a name and it is saved to your templates." },
-  { chip: "How do I pick a voice?", short: "Pick a voice", q: "How do I pick a voice and language?", a: "On Select voice, switch between Male and Female and press play to hear a sample. Tap Continue, then choose the language for the video." },
-  { chip: "Where do my videos go?", short: "Where videos go", q: "Where do my videos go?", a: "Every video lands in the History tab with its name and date: videos from templates and from your own avatars are in two separate lists. Open one to watch, download or share it." },
-  { chip: "Photos or camera won’t open", short: "Photos won’t open", q: "The app can’t open my photos or camera", a: "Access was probably declined. Open Settings on your iPhone, find Synth AI Avatar and allow Photos and Camera, then try Select Image again." },
-  { chip: "How do I cancel my subscription?", short: "Cancel subscription", q: "How do I cancel my subscription?", a: "Subscriptions are billed by Apple. Open Settings on your iPhone, tap your name, then Subscriptions, choose Synth AI Avatar and tap Cancel Subscription." },
+  { chip: "Can I use my own photo?", short: "Use my own photo", q: "Can I use my own photo as the avatar?", a: "Yes. Switch to Create Avatar, tap Select Image and add your photo. Give the avatar a name and it is saved to your templates. Use only photos you have the right to use." },
+  { chip: "How do I pick a voice?", short: "Pick a voice", q: "How do I pick a voice and language?", a: "On Select voice, switch between Male and Female and press play to hear a sample. Voices are ready-made; the app doesn’t clone voices. Tap Continue, then choose the language." },
+  { chip: "Where do my videos go?", short: "Where videos go", q: "Where do my videos go?", a: "Every video lands in the History tab with its name and date, stored on your iPhone: videos from templates and from your own avatars are in two separate lists. Open one to watch, download or share it." },
+  { chip: "Camera or saving won’t work", short: "Camera won’t open", q: "The camera won’t open or videos won’t save", a: "Access was probably declined. Camera is used when you take a photo for an avatar, Photos (Add Photos Only) when you save a video. Open Settings on your iPhone, find Synthesia and allow both." },
+  { chip: "Where are my photos processed?", short: "Where photos go", q: "What happens to my photo and script?", a: "To make the video, your photo, script and settings are sent to HeyGen, the AI service that renders it. Your avatars, videos and history are stored on your iPhone. Details are in the Privacy Policy." },
+  { chip: "Do I need an account?", short: "Account", q: "Do I need an account?", a: "No. There is no registration or sign-in. Some features need an active subscription, and generating videos needs an internet connection." },
+  { chip: "How do I cancel my subscription?", short: "Cancel subscription", q: "How do I cancel my subscription?", a: "Subscriptions are billed by Apple. Open Settings on your iPhone, tap your name, then Subscriptions, choose Synthesia and tap Cancel Subscription. Deleting the app doesn’t cancel it." },
   { chip: "Restore a purchase", short: "Restore a purchase", q: "How do I restore a purchase on a new iPhone?", a: "Sign in with the same Apple ID you bought with, open the paywall in the app and tap Restore in the top corner." },
 ];
 

@@ -26,12 +26,16 @@ export default function About() {
 
         <div className="credits__roll">
           <Credit role="A production by"><b>{site.operator}</b></Credit>
+          <Credit role="Based in"><b>Berlin, Germany</b></Credit>
           <Credit role="Made for"><b>iPhone</b></Credit>
           <Credit role="Written by">
             <b>You</b>
             <p>Every script in the app is yours. We only give it a face and a voice.</p>
           </Credit>
-          <Credit role="Voices"><b>Male and Female, in the language you choose</b></Credit>
+          <Credit role="Voices">
+            <b>Male and Female, in the language you choose</b>
+            <p>Ready-made voices only. The app does not clone voices.</p>
+          </Credit>
         </div>
 
         <Reveal className="starring">

@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useMemo, useState, type ReactNode } from "react";
 import { Link } from "react-router";
 import { site } from "../content/site";
-import { legalUpdated } from "../content/legal";
 import { scrollToId } from "../utils/motion";
 import Split from "./Split";
 import Reveal from "./Reveal";
@@ -9,6 +8,7 @@ import Btn from "./Btn";
 
 type Doc = {
   title: string;
+  caption?: string;
   body: string | null;
   glance: [string, string][];
   other: { to: string; label: string };
@@ -85,11 +85,14 @@ export default function LegalPage({ doc }: { doc: Doc }) {
       <section className="lhero">
         <div className="container">
           <div className="lhero__card">
-            <Split as="h1" className="h1 lhero__title" parts={[[doc.title]]} />
+            <div className="lhero__head">
+              <Split as="h1" className="h1 lhero__title" parts={[[doc.title]]} />
+              {doc.caption && <p className="lhero__caption">{doc.caption}</p>}
+            </div>
             <Reveal as="dl" className="lhero__meta" delay={300}>
-              <div><dt>Last updated</dt><dd>{legalUpdated}</dd></div>
-              <div><dt>Sections</dt><dd>{sections.length || "Soon"}</dd></div>
-              <div><dt>Privacy requests</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+              <div><dt>Sections</dt><dd>{sections.length}</dd></div>
+              <div><dt>Operator</dt><dd>{site.operator}, {site.city}</dd></div>
+              <div><dt>Contact</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
             </Reveal>
           </div>
         </div>

@@ -51,7 +51,7 @@ function Hero() {
           </div>
           <div className="hero__stage">
             <Phone src="/images/phone-result.webp" alt="" className="hero__back" eager />
-            <Phone src="/images/phone-templates.webp" alt="Synth AI Avatar templates screen with nine avatars" className="hero__front" eager />
+            <Phone src="/images/phone-templates.webp" alt="The app’s templates screen with nine avatars" className="hero__front" eager />
             <Reveal className="hero__fact" delay={600}>
               <b className="h-num">3 steps</b>
               <p className="muted">Avatar, script, voice. Then the app generates the video and keeps it in History.</p>

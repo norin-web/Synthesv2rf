@@ -1,6 +1,6 @@
-# Synth AI Avatar — promo site
+# Synthesia — promo site
 
-Promo site for the iOS app Synth AI Avatar (App Store ID 6827178858).
+Promo site for the iOS app Synthesia (App Store ID 6827178858), operated by Dominik Kistner, Berlin.
 Design: Paper file "Synthesia v2 RF", page **Promo** (7 desktop + 7 mobile artboards and a Handoff board).
 Built on the Hisense promo scaffold: React 18 + TypeScript + Vite 6 + Tailwind 4 (layout in plain CSS) + React Router 7.
 
@@ -30,11 +30,11 @@ Otherwise every asset 404s and the page goes blank.
 
 ## Where things live
 
-- `src/app/content/site.ts` — every fact: brand, email, App Store link, operator, FAQ, screens, specs.
-  Values marked `PLACEHOLDER` wait for the owner (operator name, iOS version, category, languages, size).
-- `src/app/content/legal.ts` — Privacy Policy and Terms of Use, **verbatim** from the owner.
-  Not received yet: both pages show a "text is on its way" notice until `body` is filled.
-  Only markup may change (`## ` headings, `- ` lists); never edit the wording.
+- `src/app/content/site.ts` — every fact: brand, email, App Store link, operator, disclaimer, FAQ, screens, specs.
+  Facts follow the owner's Privacy Policy and Terms of Use. The store listing isn't live yet: after release,
+  add iOS version, category, languages and size from the iTunes lookup.
+- `src/app/content/legal.ts` — Privacy Policy and Terms of Use, **verbatim** from the owner's .docx files.
+  Only markup may change (`## ` headings, `- ` lists); never edit the wording. The documents have no date.
 - `src/styles/index.css` — tokens in `:root` (mirror the Paper tokens) and all layout.
 - `public/images/` — WebP exports from `../File/materials/` (phones 680 px wide, transparent).
 - Images in JSX always go through `img()` (`src/app/utils/img.ts`) so they work under any `base`.

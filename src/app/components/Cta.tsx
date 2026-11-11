@@ -13,7 +13,7 @@ export default function Cta() {
           <div className="cta__copy">
             <div className="cta__top">
               <h2 className="h2 cta__title">Your next video can be ready before the coffee cools</h2>
-              <p className="cta__text">Download Synth AI Avatar, pick a face and write the first line.</p>
+              <p className="cta__text">Download Synthesia, pick a face and write the first line.</p>
               <Btn href={app.url} variant="white" size="lg">Download on the App Store</Btn>
             </div>
             <div className="cta__faces">
@@ -25,7 +25,7 @@ export default function Cta() {
               <span>Template avatars are ready the moment you open the app</span>
             </div>
           </div>
-          <img className="cta__photo" src={img("/images/hand.webp")} alt="A hand holding an iPhone with the Synth AI Avatar templates screen" width={1220} height={1120} loading="lazy" />
+          <img className="cta__photo" src={img("/images/hand.webp")} alt="A hand holding an iPhone with the app’s templates screen" width={1220} height={1120} loading="lazy" />
         </Reveal>
       </div>
     </section>

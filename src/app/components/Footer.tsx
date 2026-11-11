@@ -43,8 +43,9 @@ export default function Footer() {
             <Btn href={app.url} variant="dark" size="sm">App Store</Btn>
           </div>
         </div>
+        <p className="footer__legal">{site.disclaimer}</p>
         <div className="footer__copy">
-          <span>© {site.year} {site.operator}</span>
+          <span>© {site.year} {site.operator}, {site.city}</span>
           <button onClick={() => scrollTo({ top: 0, behavior: "smooth" })}>
             Back to top <IconUp width={14} height={14} />
           </button>
